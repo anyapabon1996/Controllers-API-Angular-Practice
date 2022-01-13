@@ -23,5 +23,3 @@ routes(app);
 app.listen(PORT, HOSTNAME, () => {
     console.log('movies api server online in http://' + HOSTNAME + ':' + PORT); 
 })
-
-

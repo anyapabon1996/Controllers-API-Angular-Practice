@@ -10,4 +10,6 @@ export const routes = (app) => {
         .get(getMoviesInCart)
         .post(addMovieToCart)
         .delete(deleteMovies)
+
+    app.route('api/aut')
 }
