@@ -4,6 +4,7 @@ import { getTest } from './controllers/test.controller.js';
 import { SECRET_KEY } from './config/config.js';
 import express from 'express';
 import jwt from 'jsonwebtoken';
+import { createNewUser, getAllUser } from './controllers/register.controller.js';
 
 
 export const routes = (app) => {
@@ -18,6 +19,10 @@ export const routes = (app) => {
 
     app.route('/api/login')
         .post(validateCredentials)
+
+    app.route('/user/register')
+        .post(createNewUser)
+        .get(getAllUser)
 }
 
 //Crea una ruta
