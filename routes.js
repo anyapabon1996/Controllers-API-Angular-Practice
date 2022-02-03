@@ -1,4 +1,4 @@
-import { addMovieToCart, deleteMovies, getMoviesInCart } from './controllers/cart.controller.js';
+import { addMovieToCart, deleteAllMovies, deleteMovies, getMoviesInCart } from './controllers/cart.controller.js';
 import { validateCredentials } from './controllers/login.controller.js';
 import { getTest } from './controllers/test.controller.js';
 import { SECRET_KEY } from './config/config.js';
@@ -16,6 +16,9 @@ export const routes = (app) => {
         .get(checkToken, getMoviesInCart)
         .post(checkToken, addMovieToCart)
         .delete(checkToken, deleteMovies)
+    
+    app.route('/api/cart/deleteAll')
+        .delete(checkToken, deleteAllMovies)
 
     app.route('/api/login')
         .post(validateCredentials)

@@ -1,5 +1,5 @@
 //Carrito con las pelis que vaya agregando el usuario 
-const cartContent = [];
+let cartContent = [];
 
 //Metodo que devuelve todo lo que tenga el usuario agregado en su carrito
 export const getMoviesInCart = (req, res) => {
@@ -16,7 +16,7 @@ export const addMovieToCart = (req, res) => {
     if (index < 0) {
         
         cartContent.push(itemToAdd);
-
+        
         res.send({
             status: 'OK',
             cartContent
@@ -52,4 +52,15 @@ export const deleteMovies = (req, res) => {
             cartContent
         }); 
     }
+}
+
+export const deleteAllMovies = (req, res) => {
+    console.log('hola');
+
+    cartContent = [];
+
+    res.send({
+        status: 'OK', 
+        cartContent
+    })
 }
